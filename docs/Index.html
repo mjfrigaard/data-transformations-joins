@@ -165,7 +165,7 @@ background-size: 12%
 class: left, top
 background-image: url(img/tidyr.png)
 background-position: 90% 10%
-background-size: 12%
+background-size: 8%
 
 # Non-tidy data 
 
@@ -220,39 +220,33 @@ background-image: url(img/tidyr.png)
 background-position: 95% 8%
 background-size: 8%
 
-# Tidying un-tidy data 
+## Tidying un-tidy data 
 
 ***
 
 --
+*covered in slides*
 
-### `pivot_longer()` - wide to long
+#### `pivot_longer()` - wide to long
 
---
-
-### `pivot_wider()` - long to wide
+#### `pivot_wider()` - long to wide
 
 ***
 
 --
+*covered in exercises*
 
-#### `separate()` - pull columns apart
+.pull-left[
 
---
+ `separate()` - pull columns apart  
+ `separate_rows()` - split columns down rows   
+ `unite()` - stick columns together  
+]
 
-#### `separate_rows()` - split columns down rows
-
---
-
-#### `unite()` - stick columns together
-
---
-
-#### `unnest()` - flatten columns
-
---
-
-#### `uncount()` - duplicate rows according to a weighting variable
+.pull-right[
+`unnest()` - flatten columns  
+`uncount()` - duplicate rows according to a weighting variable  
+]
 
 
 ---
@@ -930,11 +924,10 @@ background-size: 9%
 
 Step 1. `pivot_long()` states into `state` column, values into `value` column    
 Step 2. `pivot_wider()` the `metric` and `values` across columns  
+
 --
 
 Step 3. `mutate()` the `perc` (percentage) columns
-
---
 
 
 
@@ -954,8 +947,8 @@ Add `select()` helpers to reorganize data!
 
 
 ```r
-  select(state, no_of_households, contains("pet"),
-         contains("cat"), contains("dog"))
+  select(state, 
+         contains("perc_dog"), contains("perc_cat"))
 ```
 
 ---

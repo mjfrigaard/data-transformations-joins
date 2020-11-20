@@ -19,10 +19,6 @@ library(reprex)
 library(xaringan)
 library(pagedown)
 library(xaringanthemer)
-# folders
-folders <- c("code", "data", "img", "pdfs")
-purrr::map(.x = folders, .f = fs::dir_create)
-
 knitr::opts_chunk$set(warning = FALSE, message = FALSE, fig.align = "center", 
                       dpi = 320, fig.height = 4, fig.path = "img/")
 
@@ -177,7 +173,7 @@ knitr::include_graphics(path = "img/intersection.png")
 class: left, top
 background-image: url(img/tidyr.png)
 background-position: 90% 10%
-background-size: 12%
+background-size: 8%
 
 # Non-tidy data 
 
@@ -230,39 +226,33 @@ background-image: url(img/tidyr.png)
 background-position: 95% 8%
 background-size: 8%
 
-# Tidying un-tidy data 
+## Tidying un-tidy data 
 
 ***
 
 --
+*covered in slides*
 
-### `pivot_longer()` - wide to long
+#### `pivot_longer()` - wide to long
 
---
-
-### `pivot_wider()` - long to wide
+#### `pivot_wider()` - long to wide
 
 ***
 
 --
+*covered in exercises*
 
-#### `separate()` - pull columns apart
+.pull-left[
 
---
+ `separate()` - pull columns apart  
+ `separate_rows()` - split columns down rows   
+ `unite()` - stick columns together  
+]
 
-#### `separate_rows()` - split columns down rows
-
---
-
-#### `unite()` - stick columns together
-
---
-
-#### `unnest()` - flatten columns
-
---
-
-#### `uncount()` - duplicate rows according to a weighting variable
+.pull-right[
+`unnest()` - flatten columns  
+`uncount()` - duplicate rows according to a weighting variable  
+]
 
 
 ---
@@ -957,11 +947,10 @@ background-size: 9%
 
 Step 1. `pivot_long()` states into `state` column, values into `value` column    
 Step 2. `pivot_wider()` the `metric` and `values` across columns  
+
 --
 
 Step 3. `mutate()` the `perc` (percentage) columns
-
---
 
 ```{r CatVsDogWide-pivot_longer-pivot_wider-mutate-no-show, echo=FALSE, eval=FALSE}
 CatVsDogWide %>% 
@@ -994,8 +983,8 @@ Add `select()` helpers to reorganize data!
 --
 
 ```{r , eval=FALSE}
-  select(state, no_of_households, contains("pet"),
-         contains("cat"), contains("dog"))
+  select(state, 
+         contains("perc_dog"), contains("perc_cat"))
 ```
 
 ---
@@ -1476,5 +1465,5 @@ background-size: 8%
 
 
 ```{r chrome_print, eval=FALSE, echo=FALSE}
-pagedown::chrome_print("Index.html")
+pagedown::chrome_print("Index.html", "pdfs/05-data-transformations-joins.pdf")
 ```

@@ -30,6 +30,42 @@ class: center, middle, inverse, title-slide
 
 
 class: left, top
+background-image: url(img/tidyr.png)
+background-position: 95% 7%
+background-size: 9%
+
+# Objectives 
+
+## 1) Recap `dplyr`'s data manipulation verbs
+
+## 2) `tidyr`'s pivoting functions 
+
+## 3) Joins with `dplyr`
+
+
+---
+class: left, top
+background-image: url(img/tidyr.png)
+background-position: 95% 7%
+background-size: 9%
+
+# Materials 
+
+### Follow along with the exercises:
+https://mjfrigaard.github.io/data-trans-joins-exercises/Index.html
+
+
+### A web version of these slides is located: 
+https://mjfrigaard.github.io/data-transformations-joins/Index.html#1
+
+
+
+### The RStudio.Cloud project:
+https://rstudio.cloud/project/1941654
+
+
+---
+class: left, top
 background-image: url(img/dplyr.png)
 background-position: 95% 7%
 background-size: 9%
@@ -1377,41 +1413,21 @@ class: left, top
 ### Full joins start with all data in table `X` and include the columns and rows from table `Y`
 
 ---
-class: inverse, center, middle
-
-# Fuzzy joins
-
-## *Fuzzy joins are joins where the keys (or ids) between the tables are inexact (i.e. 'fuzzy')*
-
----
 class: left, top
+background-image: url(img/dplyr.png)
+background-position: 10% 95%
+background-size: 8%
 
-# Installing the `fuzzyjoin` package
+# Resources for Data Tidying 
 
- You can install the `fuzzyjoin` package from CRAN or Github below:
+### 1. [R for Data Science](https://r4ds.had.co.nz/tidy-data.html) 
 
+### 2. [Data Wrangling with R](https://cengel.github.io/R-data-wrangling/) 
 
-```r
-install.packages("fuzzyjoin")
-# or 
-devtools::install_github("dgrtwo/fuzzyjoin")
-```
+### 3. [Stack Overflow questions tagged with `tidyr`](https://stackoverflow.com/questions/tagged/tidyr)
 
- `fuzzyjoins` also requires the `IRanges` package from Bioconductor
+### 4. [RStudio Community posts tagged `tidyr`](https://community.rstudio.com/tag/tidyr)
 
-
-```r
-if (!requireNamespace("BiocManager", quietly = TRUE))
-    install.packages("BiocManager")
-BiocManager::install("IRanges")
-```
-
----
-class: left, top
-
-## How do fuzzy joins work? 
-
-### We often need to join data on something other than unique ids or keys
 
 
     </textarea>

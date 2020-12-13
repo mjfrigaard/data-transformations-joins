@@ -1,6 +1,6 @@
 ---
 title: "Data Reshaping in R"
-subtitle: "BioMarin Meetup: reshaping, transforming, and joining data in R"
+subtitle: "bmRn CSM: reshaping, transforming, and joining data in R"
 author: 
   - "Martin Frigaard"
 date: '`r Sys.Date()`'

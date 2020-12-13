@@ -1465,5 +1465,5 @@ background-size: 8%
 
 
 ```{r chrome_print, eval=FALSE, echo=FALSE}
-pagedown::chrome_print("Index.html", "pdfs/05-data-transformations-joins.pdf")
+pagedown::chrome_print("Index.html", "pdfs/05-data-transformation-joins.pdf")
 ```
